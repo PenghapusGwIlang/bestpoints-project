@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Place = require('../models/place');
 const { geometry } = require('../utils/hereMaps');
 
-mongoose.connect('mongodb://localhost:2717/bestpoints')
+mongoose.connect(process.env.DB_URL)
     .then((result) => {
         console.log('connected to mongodb')
     }).catch((err) => {
